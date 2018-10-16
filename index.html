@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>three.js webgl - cloth simulation</title>
+		<title>Scenery</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
 		<style>
@@ -38,7 +38,6 @@
 	</head>
 
 	<body>
-		<a onclick="togglePins();">Pins</a>
 		<script src="js/three.js"></script>
 
 		<script src="js/Detector.js"></script>
@@ -377,7 +376,7 @@
 					var mesh = new THREE.Mesh(new THREE.PlaneBufferGeometry(size*5,size*5/2),ranMat);
 					let x = (Math.random()-0.5)*10000,z = (Math.random()-0.5)*10000,y = (Math.random()-0.2)*200+1500;
 					mesh.position.set(x,y,z);
-					mesh.rotation.x = 100;
+					// mesh.rotation.x = 100;
 					scene.add(mesh);
 					var scale = Math.random()*5;
 					//位移 默认往右
@@ -728,6 +727,7 @@
 				lightVec.y -= Math.round(sunSphere.position.y);
 				lightVec.z -= Math.round(sunSphere.position.z);
 				synPos(light2, sunSphere);
+				camera.position.z-=5;
 				renderer.render( scene, camera );
 
 			}
